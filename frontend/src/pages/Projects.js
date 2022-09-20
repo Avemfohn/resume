@@ -39,19 +39,23 @@ export default function Projects() {
 
             <div class="w-full mb-5 font-mono text-5xl text-gray-600 group">
                 <h3 class="mb-3">{key}</h3>
+                {result[key].map((item) => (
+                  <a href={item.link} target="_blank" rel="noreferrer">
                 <div class="box-content h-full w-64 p-4 border-8  hover:border-l-stone-400 hover:border-b-stone-300 ease-linear duration-1000 
                 hover:drop-shadow-xl hover:w-80 hover:bg-gradient-to-r from-blue-300 mt-3">
-                {result[key].map((item) => (
+                
                     <div class="w-64 mb-5 font-mono text-4xl text-red-600 ">
                         <h4>{item.name}</h4>
                     </div>
-                ))}
-                {result[key].map((item) => (
+                
+                
                     <div class="group-hover:drop-shadow-xl ">
                         <img src={item.image}  class="group-hover:w-96" alt={item.name}></img>
                     </div>
-                ))}
+                
                 </div>
+                </a>
+                ))}
             </div>
             ))}
     </div>
