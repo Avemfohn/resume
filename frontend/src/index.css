@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn{
+    @apply rounded-full py-2 px-4 uppercase text-xs font-bold cursor-pointer tracking-wider;
+}
+
+.box {
+	@apply
+		min-w-full
+		h-auto
+		w-auto
+		min-h-full
+		rounded;
+}
+
+.hide{
+	@apply 
+		opacity-0
+		translate-x-1
+		blur
+		transition-all
+		duration-1000
+
+}
+
+.show {
+	@apply 
+		opacity-100
+		translate-x-0
+		blur-0
+}
+
+.logos{
+	@apply
+		flex
+}
+
+.logo:nth-child(2){
+	@apply
+		delay-100
+}
+.logo:nth-child(3){
+	@apply
+		delay-200
+}
+.logo:nth-child(4){
+	@apply
+		delay-300
+}
+.logo:nth-child(5){
+	@apply
+		delay-500
+}
