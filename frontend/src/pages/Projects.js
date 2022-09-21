@@ -39,6 +39,7 @@ export default function Projects() {
 
             <div class="w-full mb-5 font-mono text-5xl text-gray-600 group">
                 <h3 class="mb-3">{key}</h3>
+                <div class="grid overflow-hidden  md:grid-cols-4 grid-rows-1 gap-3  items-center">
                 {result[key].map((item) => (
                   <a href={item.link} target="_blank" rel="noreferrer">
                 <div class="box-content h-full w-64 p-4 border-8  hover:border-l-stone-400 hover:border-b-stone-300 ease-linear duration-1000 
@@ -56,8 +57,10 @@ export default function Projects() {
                 </div>
                 </a>
                 ))}
+                </div>
             </div>
             ))}
+            
     </div>
   );
 }
