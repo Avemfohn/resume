@@ -13,22 +13,32 @@ export default function Education() {
     if (error) return "An error has occurred.";
     if (isLoading) return "Loading...";
 
-    const getNextIntro = () => {
+      //get the next intro in 5 seconds
+      setTimeout(() => {
         if (currentIntro < data.length - 1) {
-            setCurrentIntro(currentIntro + 1);
-        } 
-        else{
-            setCurrentIntro(0);
+          setCurrentIntro(currentIntro + 1);
+        } else {
+          setCurrentIntro(0);
         }
-    }
-    const getPreviousIntro = () => {
-        if (currentIntro > 0) {
-            setCurrentIntro(currentIntro - 1);
-        } 
-        else{
-            setCurrentIntro(data.length - 1);
-        }
-    }
+      }, 5000);
+
+    // const getNextIntro = () => {
+    //     if (currentIntro < data.length - 1) {
+    //         setCurrentIntro(currentIntro + 1);
+    //     } 
+    //     else{
+    //         setCurrentIntro(0);
+    //     }
+    //     setInterval(getNextIntro, 3000);
+    // }
+    // const getPreviousIntro = () => {
+    //     if (currentIntro > 0) {
+    //         setCurrentIntro(currentIntro - 1);
+    //     } 
+    //     else{
+    //         setCurrentIntro(data.length - 1);
+    //     }
+    // }
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -51,9 +61,8 @@ export default function Education() {
         </div>
         <div class="mb-7">
             <h4 class="text-black  w-full mb-3 font-mono text-4xl md:text-5xl">{data[currentIntro]?.title}</h4>
-            <h4 class="text-black  w-full mb-5 font-mono text-lg">{data[currentIntro]?.text}</h4>
-            <button class="btn text-primary border-dashed md:border-2 border-sky-300 text-zinc-600 focus-within:shadow-lg hover:-rotate-45 hover:border-solid duration-[2000ms] hover:bg-sky-400 mr-2" onClick={getPreviousIntro}>Previous</button>
-            <button class="btn text-primary border-dashed md:border-2 border-sky-300 text-zinc-600 focus-within:shadow-lg hover:rotate-45 hover:border-solid duration-[2000ms] hover:bg-sky-400" onClick={getNextIntro}>Next</button>
+            <h4 class="text-black  w-full mb-5 font-mono text-lg">{data[currentIntro]?.text}</h4>            
+          
         </div>
     </div>
   )
